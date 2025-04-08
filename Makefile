@@ -29,6 +29,29 @@ kernel_4: kernel_4.cu
 kernel_5: kernel_5.cu 
 	$(NVCC_BASE) $^ $(CUDA_OUTPUT_FILE)
 
+kernel_6: kernel_6.cu 
+	$(NVCC_BASE) $^ $(CUDA_OUTPUT_FILE)
+
+kernel_7: kernel_7.cu 
+	$(NVCC_BASE) $^ $(CUDA_OUTPUT_FILE)
+
+kernel_8: kernel_8.cu 
+	$(NVCC_BASE) $^ $(CUDA_OUTPUT_FILE)
+
+kernel_9: kernel_9.cu 
+	$(NVCC_BASE) $^ $(CUDA_OUTPUT_FILE)
+
+compile_all: 
+	make kernel_0
+	make kernel_1
+	make kernel_2
+	make kernel_3
+	make kernel_4
+	make kernel_5
+	make kernel_6
+	make kernel_7
+	make kernel_8
+	make kernel_9
 
 run_all: 
 	./$(OUT_DIR)/kernel_0
@@ -37,6 +60,10 @@ run_all:
 	./$(OUT_DIR)/kernel_3
 	./$(OUT_DIR)/kernel_4
 	./$(OUT_DIR)/kernel_5
+	./$(OUT_DIR)/kernel_6
+	./$(OUT_DIR)/kernel_7
+	./$(OUT_DIR)/kernel_8
+	./$(OUT_DIR)/kernel_9
 
 clean:
 	rm $(OUT_DIR)/*
