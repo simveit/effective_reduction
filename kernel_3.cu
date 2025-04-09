@@ -14,10 +14,6 @@ __global__ void kernel_3(const int *d_in, int *d_out, size_t N) {
   const int global_tid = blockIdx.x * threadsPerBlock + tid;
   const int threads_in_grid = threadsPerBlock * gridDim.x;
 
-  if (global_tid == 0) {
-    *d_out = 0;
-  }
-
   if (global_tid < N) {
 #pragma unroll
     for (int j = 0; j < batchSize; j++) {
@@ -56,6 +52,7 @@ template <int threadsPerBlock, int batchSize>
 void kernel_3_launch(const int *d_in, int *d_out, size_t N) {
   const int numBlocks = (N + threadsPerBlock * batchSize - 1) /
                         (threadsPerBlock * batchSize);
+  cudaMemset(d_out, 0, sizeof(int));
   kernel_3<threadsPerBlock, batchSize><<<numBlocks, threadsPerBlock>>>(d_in,
                                                                        d_out, N);
 }

@@ -14,9 +14,6 @@ __global__ void kernel_4(const int4 *d_in, int *d_out, size_t N) {
   const int global_tid = blockIdx.x * threadsPerBlock + tid;
   const int threads_in_grid = threadsPerBlock * gridDim.x;
 
-  if (global_tid == 0) {
-    *d_out = 0;
-  }
 
   if (global_tid < N) {
 #pragma unroll
@@ -58,6 +55,7 @@ void kernel_4_launch(const int *d_in, int *d_out, size_t N) {
   const int numBlocks = (N + threadsPerBlock * batchSize - 1) /
                         (threadsPerBlock * batchSize);
   const int4 *d_in_cast = reinterpret_cast<const int4 *>(d_in);
+  cudaMemset(d_out, 0, sizeof(int));
   kernel_4<threadsPerBlock, batchSize><<<numBlocks, threadsPerBlock>>>(d_in_cast,
                                                                        d_out, N);
 }

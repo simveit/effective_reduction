@@ -11,13 +11,13 @@ The best performance is archieved for `kernel_9` which uses vectorization over b
 
 | Kernel | Bandwidth (GB/s) | % of Max Bandwidth | Implementation |
 |--------|------------------|-------------------|----------------|
-| kernel_0 | 639.31 | 19.37% | Custom |
-| kernel_1 | 661.15 | 20.03% | Custom |
+| kernel_0 | 639.37 | 19.37% | Custom |
+| kernel_1 | 661.16 | 20.04% | Custom |
 | kernel_2 | 859.24 | 26.04% | Custom |
-| kernel_3 | 3228.89 | 97.85% | Custom |
-| kernel_4 | 3231.46 | 97.92% | Custom |
-| kernel_5 | 3190.48 | 96.68% | NVIDIA CUB |
-| kernel_6 | 3230.55 | 97.90% | Custom |
-| kernel_7 | 3230.98 | 97.91% | Custom |
-| kernel_8 | 3232.48 | 97.95% | Custom |
-| kernel_9 | 3233.34 | 97.98% | Custom |
+| kernel_3 | 3226.86 | 97.78% | Custom |
+| kernel_4 | 3229.98 | 97.88% | Custom |
+| kernel_5 | 3190.53 | 96.68% | NVIDIA CUB |
+| kernel_6 | 3229.01 | 97.85% | Custom |
+| kernel_7 | 3229.62 | 97.87% | Custom |
+| kernel_8 | 3231.03 | 97.91% | Custom |
+| kernel_9 | 3231.54 | 97.93% | Custom |
