@@ -13,7 +13,7 @@ The best performance is archieved for `kernel_9` which uses vectorization over b
 |--------|------------------|-------------------|----------------|
 | kernel_0 | 639.37 | 19.37% | Custom |
 | kernel_1 | 661.16 | 20.04% | Custom |
-| kernel_2 | 859.24 | 26.04% | Custom |
+| kernel_2 | 882.823 | 26.75% | Custom |
 | kernel_3 | 3226.86 | 97.78% | Custom |
 | kernel_4 | 3229.98 | 97.88% | Custom |
 | kernel_5 | 3190.53 | 96.68% | NVIDIA CUB |
