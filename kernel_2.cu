@@ -13,10 +13,6 @@ __global__ void kernel_2(const int *d_in, int *d_out, size_t N) {
   const int tid = threadIdx.x;
   const int global_tid = blockIdx.x * threadsPerBlock + tid;
 
-  if (global_tid == 0) {
-    *d_out = 0;
-  }
-
   if (global_tid < N) {
     sum += d_in[global_tid];
   }
@@ -49,6 +45,7 @@ __global__ void kernel_2(const int *d_in, int *d_out, size_t N) {
 template <int threadsPerBlock>
 void kernel_2_launch(const int *d_in, int *d_out, size_t N) {
   const int numBlocks = (N + threadsPerBlock - 1) / threadsPerBlock;
+  cudaMemset(d_out, 0, sizeof(int));
   kernel_2<threadsPerBlock><<<numBlocks, threadsPerBlock>>>(d_in, d_out, N);
 }
 
