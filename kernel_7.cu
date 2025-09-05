@@ -1,5 +1,6 @@
 /*
- * Copyright (c) 2025, simveit
+* Copyright (c) 2011-2012, Archaea Software, LLC.
+* Copyright (c) 2025, simveit (modifications)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
