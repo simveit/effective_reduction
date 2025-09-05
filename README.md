@@ -2,7 +2,7 @@
 Improve reduction kernel step by step
 Please see [my blogpost](https://veitner.bearblog.dev/making-vector-sum-really-fast/) for a detailed explanation.
 
-This is inspired by [fast.cu](https://github.com/pranjalssh/fast.cu/tree/main), a repo which aims to write highly performant CUDA kernels.
+This is inspired by [fast.cu](https://github.com/pranjalssh/fast.cu/tree/main), a repo which aims to write highly performant CUDA kernels and the [CUDA handbook](https://github.com/ArchaeaSoftware/cudahandbook/tree/b521b2eadbfe999f7e45889640628de0bf5f2bf4/reduction)
 
 `kernel_3`, `kernel_4`, `kernel_6`, `kernel_7`, `kernel_8` and `kernel_9` all outperform the NVIDIA CUB library for this problem.
 The best performance is archieved for `kernel_9` which uses vectorization over batches as well as the `__reduce_add_sync` intrinsic.
